@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Scale, resize images and download" />
+    <meta name="keywords" content="Scale, Resize, Image, Photo, download" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Scale.io</title>
+  </head>
+  <body>
+    <main class="main">
+      <section class="content">
+        <label class="img-size original-size"></label>
+        <div class="upload-container">
+          <input type="file" accept="image" hidden id="fileInput" />
+          <img
+            src="./assets/images/upload-preview.svg"
+            alt="upload image"
+            width="100%"
+            height="100%"
+            class="preview-img"
+          />
+        </div>
+        <br />
+        <form class="action-form form-disabled">
+          <div class="scale-container">
+            <label for="scale" id="scale-label">scale 1.0</label>
+            <input
+              class="scale-input"
+              type="range"
+              id="scale"
+              value="100"
+              min="0"
+              max="200"
+            />
+          </div>
+          <label for="width">width</label>
+          <input class="scale-input" type="number" value="100" id="width" />
+          <label for="height">height</label>
+          <input class="scale-input" type="number" value="100" id="height" />
+          <br />
+          <button id="download" type="button">Download</button>
+        </form>
+      </section>
+    </main>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

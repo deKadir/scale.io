@@ -1,0 +1,47 @@
+.main {
+  display: flex;
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+
+.upload-container {
+  position: relative;
+  width: min(100%, 500px);
+  border: 1px solid grey;
+}
+.upload-container input {
+  position: absolute;
+  inset: 0;
+}
+.preview-img {
+  min-height: min(500px, 100%);
+}
+
+.action-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.scale-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.size-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-block: 1rem;
+  gap: 1rem;
+}
