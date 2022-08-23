@@ -1,5 +1,5 @@
 let scale = 1;
-
+let fileType = '';
 const previewImg = document.querySelector('.preview-img'),
   fileInput = document.querySelector('#fileInput'),
   addButton = document.querySelector('.add-size'),
@@ -26,7 +26,8 @@ function loadImage(e) {
   previewImg.src = src;
   img.src = src;
 
-  img.onload = function (e) {
+  img.onload = function () {
+    fileType = file.type;
     const imgLabel = document.querySelector('.original-size');
     imgLabel.innerText = `Original size: ${this.width}x${this.height}`;
     document.querySelector('.form-disabled')?.classList.remove('form-disabled');
@@ -74,7 +75,7 @@ function handleDownload() {
     ctx.drawImage(img, 0, 0, scaledWidth, scaledHeight);
     let link = document.createElement('a');
     link.download = 'scaled-img';
-    link.href = canvas.toDataURL();
+    link.href = canvas.toDataURL(fileType);
     link.click();
   });
 }
